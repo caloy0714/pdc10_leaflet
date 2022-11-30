@@ -20,47 +20,59 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 20
 }).addTo(map);
 
-L.marker([15.2709, 120.6381]).addTo(map);
-L.marker([-43.549, -178.374]).addTo(map);
-L.marker([29.95115,-90.07157]).addTo(map);
-L.marker([65.017,-19.006]).addTo(map);
-L.marker([36.3906,25.46201]).addTo(map);
-L.marker([39.0722, 21.8220]).addTo(map);
-//tarlac,philppines
-//wellington, new zealand 
-//new orleans, USA
-//island, iceland
-//santorini,Greece
-//cape town, south africa
 
-// L.marker([-33.92534/18.42446]).addTo(map);
-// L.marker([52.1523,-9.5618]).addTo(map);
-// L.marker([48.85643, 2.35253]).addTo(map);
-// L.marker([-33.86872, 151.20930]).addTo(map);
-// L.marker([48.20802, 16.37397]).addTo(map);
+//tarlac,philppines
+L.marker([15.2709, 120.6381]).addTo(map);
+
+//wellington, new zealand
+L.marker([-43.549, -178.374]).addTo(map);
+
+//new orleans, USA
+L.marker([29.95115,-90.07157]).addTo(map);
+
+//island, iceland
+L.marker([65.017,-19.006]).addTo(map);
+
+//santorini,Greece
+L.marker([36.3906,25.46201]).addTo(map);
+
+//cape town, south africa
+L.marker([39.0722, 21.8220]).addTo(map);
+
+
 //kerry, ireland
 //Paris, France
 //sydney
-//vienna, austria
-
+//vienna,austria
 var latlngs = [[15.2709, 120.6381],[-43.549, -178.374],[29.95115,-90.07157],[65.017,-19.006],[36.3906,25.46201],
 [39.0722, 21.8220]];
 var polygon = L.polygon(latlngs, {color: 'red'}).addTo(map);
 map.fitBounds(polygon.getBounds());
 
+//POLYLINE
 var latlngs = [
-    [45.51, -122.68],
-    [37.77, -122.43],
-    [34.04, -118.2]
-];
-var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+    [-33.92534, 18.42446],
+    [52.1523,-9.5618],
+    [48.85643, 2.35253],
+    [-33.86872, 151.20930],
+    [48.20802, 16.37397]
 
-// zoom the map to the polyline
+];
+var polyline = L.polyline(latlngs, {color: 'yellow'}).addTo(map);
 map.fitBounds(polyline.getBounds());
 
+//INITIAL
+var polyline_latlngs = [
+    [[66.37316081585122, 83.9048047618886],
+     [66.68726205413357, 76.97550424965208],
+     [64.2140170435325, 77.04988316434682],
+     [64.2140170435325, 83.68257827176969]
+    ]
+];
+polyline = L.polyline(polyline_latlngs, {color: 'red'}).addTo(map);
 
-
-
+//SMALL CIRCLE
+L.circle([50.5, 30.5], {radius: 200}).addTo(map);
 
     </script>
 </html>
